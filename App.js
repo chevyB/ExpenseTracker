@@ -5,7 +5,7 @@ import { Entypo } from '@expo/vector-icons';
 import theme from './constants/theme';
 import HomeScreen from './src/screens/HomeScreen';
 import StatisticsScreen from './src/screens/StatisticsScreen';
-import WalletScreen from './src/screens/WalletScreen';
+import CardsScreen from './src/screens/CardsScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
 import AddScreen from './src/screens/AddScreen';
 
@@ -40,7 +40,7 @@ export default function App() {
             ),
           }}
         />
-        <Tab.Screen name="Wallet" component={WalletScreen} 
+        <Tab.Screen name="My Card" component={CardsScreen} 
           options={{
             tabBarIcon: ({ color, size }) => (
               <Entypo name="wallet" color={color} size={size} />
