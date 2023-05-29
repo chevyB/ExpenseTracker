@@ -6,6 +6,7 @@ import { useState } from 'react';
 import Wrapper from '../templates/Wrapper';
 import theme from '../../constants/theme';
 import Transaction from '../components/Transaction';
+import Box from '../components/Box';
 
 const StatisticsScreen =()=> {
   const [active, setActive] = useState('income')
@@ -79,24 +80,30 @@ const StatisticsScreen =()=> {
   const Overview = () => {
     return (
       <View style={{flexDirection: 'row', justifyContent: 'space-around', marginBottom: 20}}>
-        <View style={[styles.overview, {backgroundColor: theme.color.primary2}]}>
-          <Text style={styles.overviewTitle}>Total Income</Text>
-          <View style={{flexDirection: 'row'}}>
-            <View style={[styles.iconCircle, {backgroundColor: theme.color.primary}]}>
-              <MaterialIcons name="arrow-upward" size={16} color="white" />
-            </View>
-            <Text style={[theme.textBlack, theme.textmd, theme.semibold]}> ₱ 1,123.00</Text>
-          </View>
-        </View>
-        <View style={[styles.overview, , {backgroundColor: theme.color.secondary2}]}>
-          <Text style={styles.overviewTitle}>Total Expenses</Text>
-          <View style={{flexDirection: 'row'}}>
-            <View style={[styles.iconCircle, {backgroundColor: theme.color.secondary}]}>
+        <Box 
+          bgcolor={theme.color.primary2} 
+          renderTop={<Text style={styles.overviewTitle}>Total Income</Text>} 
+          renderBottom={
+            <>
+              <View style={[styles.iconCircle, {backgroundColor: theme.color.primary}]}>
+                <MaterialIcons name="arrow-upward" size={16} color="white" />
+              </View>
+              <Text style={[theme.textBlack, theme.textmd, theme.semibold]}> ₱ 1,123.00</Text>
+            </>
+          } 
+        />
+        <Box 
+          bgcolor={theme.color.secondary2} 
+          renderTop={<Text style={styles.overviewTitle}>Total Expenses</Text>} 
+          renderBottom={
+            <>
+              <View style={[styles.iconCircle, {backgroundColor: theme.color.secondary}]}>
               <MaterialIcons name="arrow-downward" size={16} color="white" />
-            </View>
-            <Text style={[theme.textBlack, theme.textmd, theme.semibold]}> ₱ 1,123.00</Text>
-          </View>
-        </View>
+              </View>
+              <Text style={[theme.textBlack, theme.textmd, theme.semibold]}> ₱ 1,123.00</Text>
+            </>
+          } 
+        />
       </View>
     )
   }
@@ -143,15 +150,6 @@ const StatisticsScreen =()=> {
 }
 
 const styles = StyleSheet.create({
-  overview: {
-    paddingVertical: 16,
-    paddingHorizontal: 20,
-    margin: 4,
-    borderRadius: 20,
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'space-around'
-  },
   overviewTitle: {
     color: theme.color.gray,
     fontSize: 18,
