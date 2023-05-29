@@ -53,12 +53,12 @@ const HomeScreen =()=> {
         <Card />
         <View>
           <View style={[styles.transactionHeader]}>
-            <Text style={[theme.textBlack, theme.bold, theme.textlg]}>Transactions</Text>
+            <Text style={[theme.textBlack, theme.bold, theme.textlg]}>Recent Transactions</Text>
             <Text style={[theme.textGray, theme.textmd]}>See all</Text>
           </View>
 
-          <Transaction />
-          <Transaction />
+          <Transaction isIncome={false} />
+          <Transaction isIncome={true}/>
           
         </View>
       </Wrapper>

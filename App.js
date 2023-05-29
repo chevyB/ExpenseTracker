@@ -2,11 +2,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Entypo } from '@expo/vector-icons';
 
+import theme from './constants/theme';
 import HomeScreen from './src/screens/HomeScreen';
 import StatisticsScreen from './src/screens/StatisticsScreen';
 import WalletScreen from './src/screens/WalletScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
-import theme from './constants/theme';
+import AddScreen from './src/screens/AddScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,7 +33,14 @@ export default function App() {
             ),
           }}
         />
-        <Tab.Screen name="Waller" component={WalletScreen} 
+        <Tab.Screen name="Add" component={AddScreen} 
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <Entypo name="plus" color={theme.color.secondary} size={size} />
+            ),
+          }}
+        />
+        <Tab.Screen name="Wallet" component={WalletScreen} 
           options={{
             tabBarIcon: ({ color, size }) => (
               <Entypo name="wallet" color={color} size={size} />

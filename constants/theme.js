@@ -17,6 +17,9 @@ const theme = {
     color: {
         white: 'white',
         primary: '#8233f8',
+        primary2: '#f2eafd',
+        secondary: '#ff6939',
+        secondary2: '#feefeb',
         black: '#333449',
         gray: '#707070',
         inactive: '#c8c8d3',
